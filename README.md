@@ -35,9 +35,14 @@ Claude өөрөө суулгана. Дараа нь `/reload-plugins` гэж б�
 /plugin install goat-proof-frame@goat-proof-frame
 ```
 
+**Zip файлаар авсан бол:**
+1. `goat-proof-frame.zip`-ийг задална. Задалсан `goat-proof-frame` хавтсаа устгалгүй үлдээгээрэй.
+2. Claude Code-д "Энэ хавтсан дахь plugin-ийг суулгаад өг:" гэж бичээд задалсан `goat-proof-frame` хавтсаа чирж оруулна.
+3. `/reload-plugins` гэж бичнэ.
+
 **Шинэ хувилбар гарвал:** Claude-д "goat-proof-frame plugin-ийг шинэчил" гэж хэлэхэд болно.
 
-> **For Claude Code:** to install this plugin, run `claude plugin marketplace add SaagiiSG/goat-proof-frame` and then `claude plugin install goat-proof-frame@goat-proof-frame`, then tell the user to type `/reload-plugins`. To update it: `claude plugin marketplace update goat-proof-frame` and then `claude plugin update goat-proof-frame@goat-proof-frame`.
+> **For Claude Code:** to install this plugin, run `claude plugin marketplace add SaagiiSG/goat-proof-frame` (or, from an unzipped copy, `claude plugin marketplace add <path to the goat-proof-frame folder>`) and then `claude plugin install goat-proof-frame@goat-proof-frame`, then tell the user to type `/reload-plugins`. To update it: `claude plugin marketplace update goat-proof-frame` and then `claude plugin update goat-proof-frame@goat-proof-frame`.
 
 ---
 
