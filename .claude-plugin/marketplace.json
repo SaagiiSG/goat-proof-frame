@@ -1,6 +1,9 @@
 {
   "name": "goat-proof-frame",
-  "owner": { "name": "GOAT Academy" },
+  "owner": {
+    "name": "GOAT Academy"
+  },
+  "description": "Proof Frame · Нотолгоо хүрээ: before-and-after ad frame for Reels/TikTok. Mongolian-first.",
   "plugins": [
     {
       "name": "goat-proof-frame",

@@ -2,6 +2,19 @@
   "name": "goat-proof-frame",
   "version": "1.0.0",
   "description": "Proof Frame · Нотолгоо хүрээ: wraps a finished video in an ad frame that proves the result. A customer comment as the hook, a huge silver headline, a tilted BEFORE phone behind a bigger AFTER phone joined by a dotted arrow, and a price pill. Renders a 1080x1920 MP4 for Reels/TikTok.",
-  "author": { "name": "GOAT Academy" },
-  "keywords": ["video", "editing", "reels", "tiktok", "before-after", "ad", "mongolian", "ffmpeg"]
+  "author": {
+    "name": "GOAT Academy"
+  },
+  "keywords": [
+    "video",
+    "editing",
+    "reels",
+    "tiktok",
+    "before-after",
+    "ad",
+    "mongolian",
+    "ffmpeg"
+  ],
+  "license": "MIT",
+  "repository": "https://github.com/SaagiiSG/goat-proof-frame"
 }
