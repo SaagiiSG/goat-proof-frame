@@ -81,7 +81,7 @@ Leave out any role the user doesn't want. On the first frame everything except t
 - `accent`: colour of the dots and the arrow button, as `#RRGGBB`. Default `#E8663A` (warm orange). Use the brand colour if the user has one.
 - `before_label` / `after_label`: the tags on the phones. Default `ӨМНӨ` / `ДАРАА`.
 
-**Auto sound effects** (soft, so they sit under the clip's own sound; raise them with `"sfx": {"volume": 1.5}`): a notification as the comment pill appears, a whoosh as the phones settle, a ding as the price pill lands. If the AFTER clip has its own music, skip extra music.
+**Auto sound effects** (soft, so they sit under the clip's own sound; raise them with `"sfx": {"volume": 1.5}`): a notification as the comment pill appears (with no comment, a whoosh as the phones settle), a ding as the price pill lands. Never two within 0.5 s, so a price that is up from the start gets no ding. If the AFTER clip has its own music, skip extra music.
 
 Before rendering, tell the user the plan in plain words (which clip is before, which is after, the four lines, when the price pops) and ask "OK?". This is the only approval needed.
 

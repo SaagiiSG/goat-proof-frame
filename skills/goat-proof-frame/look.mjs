@@ -56,12 +56,12 @@ export async function prepare(ctx) {
   return { priceAt: price ? priceAt(price, ctx.dur) : null };
 }
 
-// Soft on purpose (Saagii, 14 Nov: "tone down"); members raise them with "sfx": {"volume": …}.
+// v1's events at about 30% of its levels (Saagii, 16 Nov: "bring the sounds effects down a bit"); members raise them
+// with "sfx": {"volume": …}. Never two within 0.5 s: the comment's notify opens the reel (the phones' whoosh 0.2 s
+// later only plays without a comment), and a price that lands within 0.5 s of that opening sound gets no ding.
 export function sfx(plan, ctx) {
-  const out = [];
-  if (text(plan, "comment")) out.push({ sound: "notify", at: 0, volume: 0.4 });
-  out.push({ sound: "whoosh", at: 0.2, volume: 0.3 });
-  const price = text(plan, "price");
-  if (price) out.push({ sound: "ding", at: Math.round((priceAt(price, ctx.dur) + 0.15) * 1000) / 1000, volume: 0.5 });
+  const out = [text(plan, "comment") ? { sound: "notify", at: 0, volume: 0.24 } : { sound: "whoosh", at: 0.2, volume: 0.21 }];
+  const price = text(plan, "price"), at = price && Math.round((priceAt(price, ctx.dur) + 0.15) * 1000) / 1000;
+  if (price && at - out[0].at >= 0.5 - 1e-9) out.push({ sound: "ding", at, volume: 0.3 });
   return out;
 }
