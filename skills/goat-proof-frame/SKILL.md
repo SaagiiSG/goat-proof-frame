@@ -14,6 +14,8 @@ Talk to the user in the language they write in (usually Mongolian). Keep message
 
 ## 1. Setup check (first time on a machine)
 
+**Every new video, first:** run `claude plugin marketplace update goat-proof-frame`, then `claude plugin update goat-proof-frame@goat-proof-frame`. If it installs a new version, tell the user a new version was installed and ask them to type `/reload-plugins` before you go on. If either command fails (offline, or installed from a zip), carry on and don't mention it.
+
 Run `node --version` (needs 22 or newer) and `ffmpeg -version`. If either is missing, show the install command and ask before installing (it is their computer):
 - Mac: `brew install node ffmpeg`
 - Windows: `winget install OpenJS.NodeJS.LTS` and `winget install Gyan.FFmpeg`, then close and reopen the terminal.
@@ -33,7 +35,7 @@ Make `raw/` and `output/` in the current folder. Ask for:
    - a comment: a doubt real customers say, 3–6 words ("Үнэхээр ийм болох уу?"), and the small grey line above it (`name`). Use a real comment or a question they hear often. Never invent a customer's name or a time: if it isn't a real comment the user can show, the name is just "хэрэглэгч". A time ("· 2м") goes in only when it comes from that real comment.
    - a headline: 1–3 words in capitals that answer it ("ЖИНХЭНЭ ҮР ДҮН", "2 ЦАГТ").
    - a sub line: what was done ("Үс засалт + будаг").
-   - a price line: the offer ("Үнэ 45 000₮"). Never invent a price. Ask.
+   - a price line: the offer, with the price the user gave. Never invent a price. Ask.
 
 **What to film** (tell the user before they shoot, if they haven't yet): phone upright, the result in the middle of the screen and well lit, the same spot and angle for before and after. The AFTER phone keeps the whole upright frame; the BEFORE phone keeps most of it.
 
@@ -52,7 +54,7 @@ Write `plan.json` in the project folder (paths are relative to it):
     {"role": "comment", "name": "хэрэглэгч · 2м", "text": "Үнэхээр ийм болох уу?"},
     {"role": "headline", "text": "ЖИНХЭНЭ ҮР ДҮН"},
     {"role": "sub", "text": "Үс засалт + будаг"},
-    {"role": "price", "text": "Үнэ 45 000₮", "start": 7.0}
+    {"role": "price", "text": "Захиалга авна", "start": 7.0}
   ],
   "look": {"accent": "#E8663A"}
 }
@@ -115,6 +117,7 @@ Tell the user where the file is (`output/proof-frame.mp4`) and that it is ready 
 
 ## Rules
 
+- Every word and graphic on screen comes from what this video says or shows, or from what the user gave you. The examples in this file are only examples: never put them in a video. If the user hasn't given the words, ask.
 - **Paid ads:** if the user will run this as a paid ad about weight, skin or the body (weight loss, acne, wrinkles, cellulite, body shape), warn them first: Meta restricts before-and-after images for health and cosmetic claims, and the ad may be rejected. Hair, nails, cars and rooms are fine.
 - Show the BEFORE as it really was, and the AFTER as the real result. Don't darken, blur or pick a worse BEFORE on purpose, and never put an edited reel or another GOAT video in the AFTER phone.
 - A price, phone number or offer goes only in `price`, never in the comment or headline. Never invent a price, number, date or customer name; ask.
